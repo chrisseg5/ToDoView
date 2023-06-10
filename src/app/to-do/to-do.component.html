@@ -10,6 +10,12 @@
   button{
     margin-right: 20px;
   }
+  .date{
+    font-size: small;
+  }
+  .text{
+    font-size: large;
+  }
 </style>
 <div class="container">
   <h2>Todo List</h2>
@@ -26,7 +32,8 @@
   <ul class="list-group">
     <li class="list-group-item d-flex justify-content-between align-items-center"  *ngFor="let todo of todos; let i = index" >
       <div>
-      <span [ngClass]="{ 'done-text': todo.done }">{{ todo.text }}</span>
+      <span class="text" [ngClass]="{ 'done-text': todo.done }">{{ todo.text }}</span> <br>
+       <p class="date"> {{todo.date}} </p>
       </div>
       <div>
       <button class="btn btn-danger btn-sm " (click)="delete(i , todo.id)">Delete</button>
